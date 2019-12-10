@@ -4,6 +4,9 @@ liens utiles : https://www.frameip.com/masques-de-sous-reseau/#3-8211-adresse-ip
 
 Adresse IP : numero d'identification attribue de facon permanente ou provisoire a chaque peripherique lie a un reseau informatique qui utilise l'Internet Protocol.
 
+IPv4 : Adresse IP codee en 32 bits
+IPv6 : Adresse IP codee en 64 bits
+
 Masque de sous-reseau : Permet de distinguer la partie de l'adresse utilisee pour le routage et celle utilisable pour numerote des interfaces.
             Une adresse IP se decompose en deux parties : le sous reseau et l'hote.
             Le sous reseau s'obtient en appliquant l'operateur "&" (ET) entre l'adresse IP Et le masque de sous-reseau.
@@ -96,8 +99,40 @@ Modele OSI : Norme de communication en reseau de tous les systemes informatiques
                 Couche 6 : Presentation
                     Chargee du codage des donnees applicatives, precisement de la conversion entre donnees manipulees au niveau applicatif et chaines d'octets effectivement transmises
                     Conclusion : Conversion et chiffrement des donnees
-                Couche 7 : application
+                Couche 7 : Application
                     Point d'acces aux services reseaux. N'a pas de service propre specifique et entrant dans la porte de la norme
                     Conclusion : Point d'acces aux services reseau
 
 Server DHCP (Dynamic Host Configuration Protocol) : Server qui delivre des adresses IP aux ordinateurs qui se connectent sur le reseau
+            Pour dialoguer avec un server DHCP, la machine va simplemment emettre un paquet special de broadcast sur le reseau local.
+            Description etape par etape : 
+                L'ordinateur envoie en diffusion Broadcast un datagramme. Celui ci comporte l'adresse physique (MAC)
+                Tout server DHCP ayant recu le datagramme envoie une offre DHCP a l'attention du client identifie par son adresse IP
+                Le client retient une des offres recues et diffuse sur le reseau un datagramme de requete DHCP
+                Le server DHCP elabore un datagramme d'accuse de reception qui assigne au client l'adresse IP et son masque de sous reseau
+                Possibilite de mettre en plus :
+                    adresse IP de la passerelle par defaut
+                    adresses IP des servers DNS 
+                    adresses IP des servers NBNS
+
+Server DNS (Domain Name System) : service informatique utilise pour traduire les noms de domaine Internet en adresse IP
+            Permet de faciliter l'acces aux hotes sur un reseau IP en associant un nom a une adresse IP
+            Indispensable de nos jours car il est inconcevable de retenir les adresses IP de chaque page web que nous ouvrons
+            
+Routage IP : Un routeur est un dispositif qui permet de choisir le chemin que les datagrammes vont emprunter pour arriver a destination.
+            Etape 1 : le routeur recoit une trame provenant d'une machine connectee a un des reseaux auquel il est attache
+            Etape 2 : les datagrammes sont transmis a la couche IP
+            Etape 3 : Le routeur regarde l'en-tete du datagramme
+            Etape 4 : Si l'adresse IP appartient a un reseau connecte au router, l'information est envoyee a la couche 4 apres desencapsulation
+            Etape 5 : Si l'adresse IP fait partie d'un reseau different, le routeur consulte la table de routage lui donnant le chemin a emprunter pour une adresse donnee
+            Etape 6 : Le routeur envoie le datagramme grace a la carte reseau reliee au reseau sur lequel le routeur decide d'envoyer le paquet
+
+Passerelle par defaut : utilise lorsqu'il s'agit de routage au niveau IP
+            C'est l'adresse de l'element qui va permettre la discussion entre deux hotes (routeur, server ou boxe internet)
+
+Port / Numero de Port : 
+            Un port permet sur un ordinateur de distinguer les differents interlocuteurs. Ces interlocuteurs sont des programmes informatiques qui ecoutent ou emettent des informations sur ces ports
+            Grace a cela, on peut executer plusieurs logiciels serveurs sur une meme machine, et simultanement des logiciels clients et server.
+                Port 0 a Port 1023 : "Well known", autrement dit les ports pour les services reseaux les plus courants
+                Port 1024 a Port 49151 : "Registered ports"
+                Port 49152 a 65535 : Ports dynamiques, utilisables pour tout type de requete TCP ou UDP
