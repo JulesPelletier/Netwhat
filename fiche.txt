@@ -1,6 +1,11 @@
 NETWHAT : 
 
-liens utiles : https://www.frameip.com/masques-de-sous-reseau/#3-8211-adresse-ip-et-masque-desous-reseau
+liens utiles :  https://www.frameip.com/masques-de-sous-reseau/#3-8211-adresse-ip-et-masque-desous-reseau
+                https://infoforall.fr/reseau/reseau-act030.html
+                https://www.commentcamarche.net/contents/534-routage-ip
+                https://fr.wikipedia.org/wiki/Port_(logiciel)#Utilit%C3%A9
+                https://fr.wikipedia.org/wiki/Domain_Name_System
+                
 
 Adresse IP : numero d'identification attribue de facon permanente ou provisoire a chaque peripherique lie a un reseau informatique qui utilise l'Internet Protocol.
 
