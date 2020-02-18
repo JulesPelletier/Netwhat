@@ -10,7 +10,7 @@ liens utiles :  https://www.frameip.com/masques-de-sous-reseau/#3-8211-adresse-i
 Adresse IP : numero d'identification attribue de facon permanente ou provisoire a chaque peripherique lie a un reseau informatique qui utilise l'Internet Protocol.
 
 IPv4 : Adresse IP codee en 32 bits
-IPv6 : Adresse IP codee en 64 bits
+IPv6 : Adresse IP codee en 128 bits
 
 Masque de sous-reseau : Permet de distinguer la partie de l'adresse utilisee pour le routage et celle utilisable pour numerote des interfaces.
             Une adresse IP se decompose en deux parties : le sous reseau et l'hote.
